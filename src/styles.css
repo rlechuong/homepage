@@ -1,3 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  /* Background Colors */
+  --bg-primary: #121212; /* Main dark background */
+  --bg-elevated: #1e1e1e; /* Cards, elevated surfaces */
+  --bg-elevated-high: #2d2d2d; /* Hover states, higher elevation */
+
+  /* Accent/Brand Colors */
+  --accent-primary: #ff9d5c; /* Warm, subtle orange (your main accent) */
+  --accent-hover: #ffb380; /* Lighter orange for hover states */
+  --accent-dark: #e8824a; /* Darker orange for active states */
+
+  /* Text Colors */
+  --text-primary: rgba(255, 255, 255, 0.87); /* High emphasis text */
+  --text-secondary: rgba(255, 255, 255, 0.6); /* Medium emphasis text */
+  --text-disabled: rgba(255, 255, 255, 0.38); /* Disabled/subtle text */
+
+  /* Project Card Accent Colors (varied, harmonious palette) */
+  --project-red: #ef5350;
+  --project-purple: #ab47bc;
+  --project-green: #66bb6a;
+  --project-pink: #ec407a;
+  --project-orange: #ffa726;
+  --project-blue: #42a5f5;
+
+  /* Utility Colors */
+  --border-color: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
