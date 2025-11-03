@@ -128,7 +128,7 @@ a:hover {
 }
 
 img {
-  border-radius: 8px;
+  border-radius: 0.75rem;
 }
 
 /* Icon Sizes & Color */
@@ -152,14 +152,6 @@ img {
 .project-links img,
 .contact-link img {
   filter: invert(1);
-}
-
-/* Temporary Image Adjustments */
-
-.contact > img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
 }
 
 /* Header Section */
@@ -295,4 +287,74 @@ img {
 .project-links {
   display: flex;
   gap: 1.5rem;
+}
+
+/* Footer Section */
+
+.contact {
+  background-color: var(--bg-elevated);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-container {
+  padding: 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+}
+
+.contact-content > p {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  width: fit-content;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-primary);
+}
+
+.contact-link img {
+  flex-shrink: 0;
+}
+
+.contact-container > img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  flex-shrink: 0;
 }
