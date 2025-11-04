@@ -131,6 +131,16 @@ img {
   border-radius: 0.75rem;
 }
 
+.social-links a:hover {
+  transform: scale(1.25);
+}
+
+.social-links a:active {
+  /* Edit This Later */
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
 /* Icon Sizes & Color */
 
 .social-links img {
@@ -373,9 +383,30 @@ img {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-}
 
-/* Footer Section */
+  /* Footer Section */
+  .contact {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-container {
+    gap: 2rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-content > p {
+    font-size: 1rem;
+  }
+
+  .contact-container > img {
+    width: 22.5rem;
+    height: 22.5rem;
+  }
+}
 
 /* ========================================
    MOBILE STYLING
@@ -383,10 +414,37 @@ img {
 
 @media (max-width: 480px) {
   /* Projects Section */
+  .projects {
+    padding: 2rem 1rem;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-}
 
-/* Footer Section */
+  /* Footer Section */
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact h2 {
+    text-align: center;
+  }
+
+  .contact-content > p {
+    text-align: center;
+  }
+
+  .contact .social-links {
+    justify-content: center;
+  }
+
+  .contact-container > img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    align-self: center;
+  }
+}
