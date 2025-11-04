@@ -358,3 +358,35 @@ img {
   object-fit: cover;
   flex-shrink: 0;
 }
+
+/* ========================================
+   TABLET STYLING
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Projects Section */
+  .projects {
+    padding: 2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Footer Section */
+
+/* ========================================
+   MOBILE STYLING
+   ======================================== */
+
+@media (max-width: 480px) {
+  /* Projects Section */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Footer Section */
