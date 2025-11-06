@@ -1,4 +1,12 @@
+/* ========================================
+   GOOGLE FONTS IMPORT
+   ======================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap");
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ======================================== */
 
 :root {
   /* Background Colors */
@@ -7,7 +15,7 @@
   --bg-elevated-high: #2d2d2d; /* Hover states, higher elevation */
 
   /* Accent/Brand Colors */
-  --accent-primary: #ff9d5c; /* Warm, subtle orange (your main accent) */
+  --accent-primary: #ff9d5c; /* Warm, subtle orange (main accent) */
   --accent-hover: #ffb380; /* Lighter orange for hover states */
   --accent-dark: #e8824a; /* Darker orange for active states */
 
@@ -18,21 +26,23 @@
 
   /* Project Card Accent Colors (varied, harmonious palette) */
   --project-red: #ef5350;
-  --project-purple: #ab47bc;
-  --project-green: #66bb6a;
-  --project-pink: #ec407a;
   --project-orange: #ffa726;
+  --project-yellow: #ffca28;
+  --project-green: #66bb6a;
   --project-blue: #42a5f5;
+  --project-purple: #ab47bc;
+  --project-pink: #ec407a;
 
   /* Utility Colors */
   --border-color: rgba(255, 255, 255, 0.12);
   --shadow: rgba(0, 0, 0, 0.5);
 }
 
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+/* ========================================
+   CSS RESET
+   Josh's Custom CSS Reset
+   https://www.joshwcomeau.com/css/custom-css-reset/
+   ======================================== */
 
 *,
 *::before,
@@ -98,7 +108,9 @@ h6 {
   isolation: isolate;
 }
 
-/* Global Styling */
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
 
 body {
   font-family: "Roboto", sans-serif;
@@ -127,21 +139,46 @@ a:hover {
   color: var(--accent-hover);
 }
 
-img {
-  border-radius: 0.75rem;
+/* Keyboard navigation - only shows when tabbing */
+a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
-.social-links a:hover {
+img {
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   ICON INTERACTIONS
+   Hover, active, and focus states for accessibility
+   ======================================== */
+
+.social-links a,
+.project-links a {
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover,
+.project-links a:hover {
   transform: scale(1.25);
 }
 
-.social-links a:active {
-  /* Edit This Later */
+.social-links a:active,
+.project-links a:active {
   transform: scale(1.1);
   opacity: 0.8;
 }
 
-/* Icon Sizes & Color */
+.social-links a:focus-visible,
+.project-links a:focus-visible {
+  transform: scale(1.15);
+}
+
+/* ========================================
+   ICON SIZES
+   ======================================== */
 
 .social-links img {
   width: 24px;
@@ -164,7 +201,10 @@ img {
   filter: invert(1);
 }
 
-/* Header Section */
+/* ========================================
+   HEADER SECTION
+   Photo with overlapping About Me card
+   ======================================== */
 
 .hero {
   position: relative;
@@ -181,7 +221,7 @@ img {
   position: relative;
   flex-shrink: 0;
   width: 25rem;
-  z-index: 2;
+  z-index: 2; /* Above about me card for overlap effect */
 }
 
 .hero-image img {
@@ -203,12 +243,12 @@ img {
 
 .about {
   background-color: var(--bg-elevated);
-  padding: 2rem 2rem 2rem 5rem;
+  padding: 2rem 2rem 2rem 5rem; /* Extra left padding for overlap */
   border-radius: 0.75rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   flex: 1;
-  margin-left: -4rem;
-  z-index: 1;
+  margin-left: -4rem; /* Negative margin creates overlap */
+  z-index: 1; /* Behind photo */
 }
 
 .about h2 {
@@ -228,15 +268,9 @@ img {
   align-items: center;
 }
 
-.social-links a {
-  transition: transform 0.3s ease;
-}
-
-.social-links a:hover {
-  transform: scale(1.25);
-}
-
-/* Projects Section */
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
 
 .projects {
   padding: 1rem;
@@ -294,17 +328,44 @@ img {
   font-size: 1rem;
 }
 
+/* Colored accent borders for visual variety */
+.project-card:nth-child(1) {
+  border-top: 3px solid var(--project-red);
+}
+
+.project-card:nth-child(2) {
+  border-top: 3px solid var(--project-orange);
+}
+
+.project-card:nth-child(3) {
+  border-top: 3px solid var(--project-yellow);
+}
+
+.project-card:nth-child(4) {
+  border-top: 3px solid var(--project-green);
+}
+
+.project-card:nth-child(5) {
+  border-top: 3px solid var(--project-blue);
+}
+
+.project-card:nth-child(6) {
+  border-top: 3px solid var(--project-purple);
+}
+
 .project-links {
   display: flex;
   gap: 1.5rem;
 }
 
-/* Footer Section */
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
 
 .contact {
   background-color: var(--bg-elevated);
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .contact-container {
@@ -371,9 +432,39 @@ img {
 
 /* ========================================
    TABLET STYLING
+   Side-by-side layouts maintained, sizes reduced
    ======================================== */
 
 @media (max-width: 768px) {
+  /* Header Section */
+  .hero {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-image {
+    width: 20rem;
+  }
+
+  .hero-image img {
+    height: 20rem;
+  }
+
+  .hero-image h1 {
+    font-size: 2rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .about {
+    padding: 1rem 1rem 1rem 2.5rem;
+    margin-left: -2rem;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
   /* Projects Section */
   .projects {
     padding: 2rem;
@@ -385,11 +476,6 @@ img {
   }
 
   /* Footer Section */
-  .contact {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
   .contact-container {
     gap: 2rem;
   }
@@ -409,13 +495,64 @@ img {
 }
 
 /* ========================================
+   SMALL TABLET / LARGE MOBILE STYLING
+   ======================================== */
+
+@media (max-width: 600px) {
+  .hero-image {
+    width: 15rem;
+  }
+
+  .hero-image img {
+    height: 15rem;
+  }
+
+  .contact-container > img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+/* ========================================
    MOBILE STYLING
    ======================================== */
 
 @media (max-width: 480px) {
+  /* Header Section */
+  .hero {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .hero-image img {
+    height: 15rem;
+  }
+
+  .hero-image h1 {
+    font-size: 2rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .about {
+    padding: 1.5rem;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
   /* Projects Section */
   .projects {
-    padding: 2rem 1rem;
+    padding: 2rem;
   }
 
   .project-grid {
